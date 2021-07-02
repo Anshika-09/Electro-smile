@@ -19,7 +19,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url(assests/left-feature-image\ -\ Copy.png);
+    background: url(assests/keaboard.jpeg);
     background-size: cover;
     overflow: hidden;
   }
@@ -50,11 +50,11 @@ nav ul li{
 }
 a{
     text-decoration: none;
-    color: #555;
+    color: #000;
     
 }
 p{
-    color: #555;
+    color: #000;
 }
 .logo{
     font-family: var(--gugi);
@@ -77,7 +77,7 @@ p{
 .col-2{
     flex-basis: 50%;
     min-width: 300px;
-    margin-right: 40%;
+    margin-left: 54%;
 }
 
 .col-2 h1{
@@ -97,44 +97,78 @@ p{
 .btn:hover{
     background: #563434;
 }
-
+/*        Feature    */
+.section{
+    padding: 8rem 0 4rem 0;
+}
 .categories{
-    margin: 70px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+    margin-left: 5%;
+    margin-right: 5%;
 }
-.col-3{
-    flex-basis: 30%;
-    min-width: 250px;
-    margin-bottom: 30px;
-}
-.col-3 img{
-    width: 100%;
-}
-.small-container{
-    max-width: 1080px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-    text-align: center;
-    
-}
-.col-4{
-    flex-basis: 25%;
-    padding: 10px;
-    min-width: 200px;
-    margin-bottom: 50px;
-    transition: transform 0.5s;
-}
-.col-4 img{
-    width: 100%;
-}
-.title{
-    text-align: center;
-    margin: 0 auto 80px;
+.advert-box{
     position: relative;
-    line-height: 60px;
-    color: #555;
+    color: #fff;
+    height: 15rem;
+    border-radius: 1.0rem;
+    padding: 1.6rem;
+    overflow: hidden;
+    z-index: 1;
 }
-.title::after{
+.advert-box img{
+    position: absolute;
+    top: 42px;
+    border-radius: 10px;
+    bottom: 30px;
+    left: 10%;
+    height: 65%;
+    width: 7rem;
+    z-index: -1;
+}
+.advert-box:nth-child(1){
+    background-color: #f5c5d1;
+}
+.advert-box:nth-child(2){
+    background-color: #a1d1df;
+}
+.advert-box:nth-child(3){
+    background-color: #e5bc00;
+}
+.advert-box .dotted{
+    position: relative;
+    height: 100%;
+    border: 2px dashed #f1f1f1;
+    border-radius: 1rem;
+}
+.advert-box .content{
+    position: absolute;
+    top: 50%;
+    right: 2px;
+    left: 40%;
+    transform: translate(0, -50%);
+}
+.advert-box .content h2{
+    text-shadow: 5px 6px 0px rgba(37, 59, 112, 0.1);
+    line-height: 1.2;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+/*featured*/
+.title{
+   margin: 4rem 0 7rem 0;
+   text-align: center;
+}
+.title h1{
+    font-size: 3rem;
+    display: inline-block;
+    position: relative;
+    z-index: 0;
+}
+.title h1::after{
     content: '';
     background: #ff523b;
     width: 80px;
@@ -144,20 +178,95 @@ p{
      bottom: 0;
      left: 50%;
      transform: translateX(-50%);
+    z-index: 1;
 }
-h4{
-    color: #555;
-    font-weight: normal;
+.product-center{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 7rem 3rem;
 }
-.col-4 p{
-    font-size: 14px;
+.product{
+    height: 24rem;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    border-radius: 1rem;
+    text-align: center;
+    transition: all 300ms ease-in-out;
+}
+.product:hover{
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+.product-header{
+    position: relative;
+    background-color: #f6f2f1;
+    height: 12rem;
+    transition: all 100ms ease-in-out;
+    z-index: 0;
+}
+
+.product-footer{
+    padding: 2rem 1.6rem 1.6rem 1.6rem;
+}
+.product-footer h3{
+    font-size: .9rem;
 }
 .rating{
-    color: #ff523b;
+    color: #43b3d9;
 }
-.col-4:hover{
-    transform: translateY(-5px);
+.product-footer .price{
+    color: #ff7c9c;
+    font-size: 1rem;
 }
+.product:hover .product-header::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 1rem 1rem 0 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: all 500ms ease-in-out;
+}
+.product-header .icons{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(0, -5%) scale(0);
+    z-index: 2;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+}
+.product-header .icons span{
+    background-color: #fff;
+    font-size: 1rem;
+    display: block;
+    border-radius: 50%;
+    padding: 1.1rem 1.2rem;
+    line-height: 1rem;
+    cursor: pointer;
+    transition: all 300% ease-in-out;
+}
+.product-header .icons span i{
+    transition: all 500ms ease-in-out;
+}
+.product-header .icons span:not(:last-child){
+    margin-bottom: 1rem;
+}
+.product-header .icons span:hover{
+    background: #ff7c9c;
+    color: #fff;
+}
+.product:hover .icons{
+    opacity: 1;
+    transform: translate(0, -50%) scale(1);
+}
+.product:hover .icons a{
+    display: block;
+    margin-bottom: 1rem;
+}
+    
 .offer{
     background: radial-gradient(#fff,#ffd6d6);
     margin-top: 80px;
@@ -314,6 +423,7 @@ select:focus{
 
 /*         media query for menu         */
 @media only screen and (max-width: 800px){
+
     nav ul{
         position: absolute;
         top: 70px;
@@ -336,13 +446,22 @@ select:focus{
         display: block;
         cursor: pointer;
     }
+   
 
 }
 @media only screen and (max-width: 600px){
+    .section{
+        min-height: 90vh;
+    }
   .row{
       text-align: center;
   }
   .col-2, .col-3, .col-4{
     flex-basis: 100%;
   }
+  .section{
+      width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 }
